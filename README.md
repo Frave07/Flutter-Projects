@@ -82,3 +82,17 @@
 </table>
 
 ### [Inspiration] (https://dribbble.com/shots/14857079-MVPs-Prototypes)
+
+
+## 05 - CINEMA 
+
+<table border>
+    <tr>
+        <th style="text-align:center">Gif App Cinema</th>
+    </tr>
+    <tr>
+        <td><img src="./Screenshot/05/cinema-app-flutter.gif" alt="" width="200"></td>
+    </tr>
+</table>
+
+### [Inspiration] (https://dribbble.com/shots/9527363-Movie-App/attachments/1554049?mode=media)

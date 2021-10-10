@@ -14,11 +14,11 @@ class CalculatorState {
     this.secondNumber = '0',
     this.resultNumber = '0',
     this.operation = '+',
-    @required this.theme,
+    required this.theme,
 
   });
 
-  CalculatorState copyWith({ String firstNumber, String secondNumber, String resultNumber, String operation, ThemeData theme}){
+  CalculatorState copyWith({ String? firstNumber, String? secondNumber, String? resultNumber, String? operation, ThemeData? theme}){
     return CalculatorState(
       firstNumber: firstNumber ?? this.firstNumber,
       secondNumber: secondNumber ?? this.secondNumber,

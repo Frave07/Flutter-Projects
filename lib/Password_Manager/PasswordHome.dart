@@ -111,11 +111,11 @@ class _PasswordHomePageState extends State<PasswordHomePage>
 
   }
 
-  void insertDB()
-  {
-    String type;
-    String email;
-    String password;
+  void insertDB() {
+
+    late String type;
+    late String email;
+    late String password;
 
     showModalBottomSheet(
       context: context,
@@ -135,7 +135,7 @@ class _PasswordHomePageState extends State<PasswordHomePage>
                   style: GoogleFonts.getFont('Inter', fontSize: 18),
                   onChanged: (value) => type = value,
                   validator: (val) {
-                    if( val.trim().isEmpty ) return 'Enter a value!';
+                    if( val!.trim().isEmpty ) return 'Enter a value!';
                     else return null;
                   },
                 ),
@@ -148,7 +148,7 @@ class _PasswordHomePageState extends State<PasswordHomePage>
                   style: GoogleFonts.getFont('Inter', fontSize: 18),
                   onChanged: (value) => email = value,
                   validator: (val) {
-                    if( val.trim().isEmpty ) return 'Enter a value!';
+                    if( val!.trim().isEmpty ) return 'Enter a value!';
                     else return null;
                   },
                 ),
@@ -161,7 +161,7 @@ class _PasswordHomePageState extends State<PasswordHomePage>
                   style: GoogleFonts.getFont('Inter', fontSize: 18),
                   onChanged: (value) => password = value,
                   validator: (val) {
-                    if( val.trim().isEmpty ) return 'Enter a value!';
+                    if( val!.trim().isEmpty ) return 'Enter a value!';
                     else return null;
                   },
                 ),

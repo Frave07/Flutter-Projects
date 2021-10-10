@@ -2,16 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
-class DetailsPage extends StatelessWidget
-{
+class DetailsPage extends StatelessWidget {
+
   final List<String> package;
   final List<String> permission;
 
-  const DetailsPage({Key key, this.package, this.permission}) : super(key: key);
+  const DetailsPage({
+    Key? key, 
+    required this.package, 
+    required this.permission
+  }) : super(key: key);
 
  @override
- Widget build(BuildContext context)
- {
+ Widget build(BuildContext context){
+   
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
@@ -42,9 +46,7 @@ class DetailsPage extends StatelessWidget
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: List.generate(this.package.length ,(index) 
-                        => index == null
-                        ? Text('Without Packages', style: GoogleFonts.getFont('Inter', fontSize: 17)) 
-                        : Text('$index -> ${this.package[index]}', style: GoogleFonts.getFont('Inter', fontSize: 17))
+                        => Text('$index -> ${this.package[index]}', style: GoogleFonts.getFont('Inter', fontSize: 17))
                     ),
                   ),
                 ),
@@ -72,9 +74,7 @@ class DetailsPage extends StatelessWidget
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: List.generate(this.permission.length ,(index)
-                        => index == null 
-                        ? Text('Without Permission', style: GoogleFonts.getFont('Inter', fontSize: 17))
-                        : Text('$index -> ${this.permission[index]}', style: GoogleFonts.getFont('Inter', fontSize: 17)
+                        => Text('$index -> ${this.permission[index]}', style: GoogleFonts.getFont('Inter', fontSize: 17)
                     )),
                   ),
                 ),

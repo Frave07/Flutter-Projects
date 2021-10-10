@@ -7,11 +7,11 @@ import 'Widget/ResultLabels.dart';
 import 'Widget/ThemeCalc.dart';
 
 
-class AppStateCalculator extends StatelessWidget
-{
+class AppStateCalculator extends StatelessWidget {
+
   @override
-  Widget build(BuildContext context) 
-  {
+  Widget build(BuildContext context) {
+    
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => CalculatorBloc())
@@ -23,12 +23,11 @@ class AppStateCalculator extends StatelessWidget
   }
 }
 
-class HomeCalculatorPage extends StatelessWidget
-{
+class HomeCalculatorPage extends StatelessWidget {
 
  @override
- Widget build(BuildContext context)
- {
+ Widget build(BuildContext context) {
+
    final size = MediaQuery.of(context).size;
    final calculatorBloc = BlocProvider.of<CalculatorBloc>(context);
    final themeBloc = BlocProvider.of<CalculatorBloc>(context).state.theme;
@@ -75,7 +74,7 @@ class HomeCalculatorPage extends StatelessWidget
             ),
 
             Expanded(
-              flex: 4,
+              flex: 5,
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
                 decoration: BoxDecoration(
@@ -89,7 +88,7 @@ class HomeCalculatorPage extends StatelessWidget
                       children: [
                         ButtonCalc(text: 'AC', textColor: Color(0xff60fade), onPressed: () => calculatorBloc.add( ClearAC() )),
                         ButtonCalc(text: '+/-', textColor: Color(0xff60fade), onPressed: () => calculatorBloc.add( PositiveNegative() )),
-                        ButtonCalc(text: '%', textColor: Color(0xff60fade)),
+                        ButtonCalc(text: '%', textColor: Color(0xff60fade), onPressed: () {}),
                         ButtonCalc(text: '/', textColor: Color(0xffeb6565), onPressed: () => calculatorBloc.add( OperationEntry('/'))),
                       ],
                     ),

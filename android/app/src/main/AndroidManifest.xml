@@ -2,6 +2,12 @@
     package="com.example.flutter_projects">
       <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
       <uses-permission android:name="android.permission.INTERNET"/>
+    <queries>
+        <intent>
+          <action android:name="android.intent.action.VIEW" />
+          <data android:scheme="https" />
+      </intent>
+    </queries>
    <application
         android:label="Flutter Projects"
         android:usesCleartextTraffic="true"

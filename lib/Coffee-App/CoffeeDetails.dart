@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class CoffeDetailsPage extends StatelessWidget
 {
-  const CoffeDetailsPage({Key key, this.coffeeModels}) : super(key: key);
+  const CoffeDetailsPage({Key? key, required this.coffeeModels}) : super(key: key);
   
   final CoffeeModels coffeeModels;
 

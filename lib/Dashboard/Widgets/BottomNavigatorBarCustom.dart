@@ -5,15 +5,14 @@ import 'package:flutter_projects/Dashboard/Pages/MainPage.dart';
 import '../Pages/Perfil.dart';
 
 
-class BottomNavigatorCustom extends StatelessWidget
-{
+class BottomNavigatorCustom extends StatelessWidget {
   final int index;
 
-  const BottomNavigatorCustom({this.index});
+  const BottomNavigatorCustom({ required this.index });
 
  @override
- Widget build(BuildContext context)
- {
+ Widget build(BuildContext context) {
+
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
       height: 60,
@@ -61,7 +60,13 @@ class _ItemMenu extends StatelessWidget {
   final Function onPressed;
   final IconData activeIcon;
 
-  const _ItemMenu({this.index, this.i, this.icon, this.onPressed, this.activeIcon});
+  const _ItemMenu({
+    required this.index, 
+    required this.i, 
+    required this.icon, 
+    required this.onPressed, 
+    required this.activeIcon
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +79,7 @@ class _ItemMenu extends StatelessWidget {
                   ? Icon(activeIcon, size: 30, color: Color(0xff0C6CF2)) 
                   : Icon(icon, size: 30, color: Color(0xff0C6CF2)),
           ),
-          onTap: onPressed
+          onTap: () => onPressed()
         ),
         if (i == index ) Icon(Icons.lens, size: 9, color: Color(0xff0C6CF2)) 
     ]);

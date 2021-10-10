@@ -3,25 +3,23 @@ import 'package:flutter_projects/Coffee-App/CoffeeListPage.dart';
 import 'package:flutter_projects/Coffee-App/Models/CoffeeModels.dart';
 
 
-class HomeCoffeePage extends StatefulWidget
-{
+class HomeCoffeePage extends StatefulWidget {
   @override
   _HomeCoffeePageState createState() => _HomeCoffeePageState();
 }
 
-class _HomeCoffeePageState extends State<HomeCoffeePage> 
-{
+class _HomeCoffeePageState extends State<HomeCoffeePage>  {
 
 
  @override
- Widget build(BuildContext context)
- {
+ Widget build(BuildContext context) {
+
    final size = MediaQuery.of(context).size;
 
     return Scaffold(
       body: GestureDetector(
         onVerticalDragUpdate: (details) {
-          if( details.primaryDelta < -10 ){
+          if( details.primaryDelta! < -10 ){
             Navigator.push(context, 
             PageRouteBuilder(
               transitionDuration: Duration(milliseconds: 650),

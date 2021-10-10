@@ -18,23 +18,23 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-
   cupertino_icons: ^1.0.2
-  flutter_bloc: ^7.0.0
-  google_fonts: ^2.0.0
+  flutter_bloc: ^7.3.0
+  animate_do: ^2.0.0
+  flutter_rating_bar: ^4.0.0
+  encrypt: ^5.0.0
   flutter_secure_storage: ^4.2.0
-  local_auth: ^1.1.6
+  fluttertoast: ^8.0.3
+  google_fonts: ^2.0.0
   hive: ^2.0.2
   hive_flutter: ^1.0.0
-  encrypt: ^5.0.0
-  fluttertoast: ^8.0.3
-  animate_do: ^2.0.0
-  
+  local_auth: ^1.1.6
+  url_launcher: ^6.0.12
 
 dev_dependencies:
   flutter_test:
@@ -42,7 +42,6 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter.
 flutter:
 
@@ -59,14 +58,12 @@ flutter:
     - Assets/ui/day-01/
     - Assets/ui/day-02/
     - Assets/ui/day-03/
+    - Assets/cinema/
   #   - images/a_dot_ham.jpeg
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

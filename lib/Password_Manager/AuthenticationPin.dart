@@ -44,9 +44,9 @@ class _AuthenticationPinPageState extends State<AuthenticationPinPage> {
               controller: _textEditingController,
               style: GoogleFonts.getFont('Inter', fontSize: 25, letterSpacing: 8),
               decoration: InputDecoration(
-                border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey[200])),
-                enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey[200])),
-                focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey[200])),
+                border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey[200]!)),
+                enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey[200]!)),
+                focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey[200]!)),
               ),
             ),
 
@@ -78,9 +78,9 @@ class _AuthenticationPinPageState extends State<AuthenticationPinPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ButtonPin(text: '', isColor: false),
+                ButtonPin(text: '', isColor: false, onPressed: (){}),
                 ButtonPin(text: '0', onPressed: () => _textEditingController.text += '0'),
-                ButtonPin(isClear: true, isColor: false, onPressed: () => _textEditingController.clear()),
+                ButtonPin(text: '' ,isClear: true, isColor: false, onPressed: () => _textEditingController.clear() ),
               ],
             ),
 

@@ -9,7 +9,13 @@ class ButtonPin extends StatelessWidget
   final bool isClear;
   final bool isColor;
 
-  const ButtonPin({ this.text, this.onPressed, this.isClear = false, this.isColor = true });
+  const ButtonPin({ 
+    required this.text, 
+    required this.onPressed, 
+    this.isClear = false, 
+    this.isColor = true 
+  });
+
 
  @override
  Widget build(BuildContext context)
@@ -29,7 +35,7 @@ class ButtonPin extends StatelessWidget
           child: isClear ? Center(child: Icon(Icons.backspace_outlined, size: 30, color: Colors.grey))
                 : Center(child: Text(this.text, style: GoogleFonts.getFont('Inter', fontSize: 30, fontWeight: FontWeight.w500, color: Colors.black))),
         ),
-        onPressed: this.onPressed,
+        onPressed: () => this.onPressed(),
       ),
      );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/Animations/Shrink-Top-List/ShrinkTopListModel.dart';
-import 'package:flutter_projects/Dashboard/Widgets/TextFrave.dart';
+import 'package:flutter_projects/Dashboard/Widgets/Widgets.dart';
 
 
 class ShrinkTopListPage extends StatefulWidget {
@@ -74,7 +74,7 @@ class _ShrinkTopListPageState extends State<ShrinkTopListPage>
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        TextFrave(text: 'Discover', size: 24),
+                        TextFrave(text: 'Discover', fontSize: 24),
                         TextFrave(text: 'View all', color: Colors.grey ),
                       ],
                     ),
@@ -99,7 +99,7 @@ class _ShrinkTopListPageState extends State<ShrinkTopListPage>
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                TextFrave(text: '${DiscoverModels.listDiscover[i].text}', size: 22, color: Colors.white ),
+                                TextFrave(text: '${DiscoverModels.listDiscover[i].text}', fontSize: 22, color: Colors.white ),
                                 TextFrave(text: '2$i Coupons', color: Colors.white,),
                                 Icon(DiscoverModels.listDiscover[i].icon, size: 50, color: Colors.white60)
                               ],
@@ -142,7 +142,7 @@ class _ShrinkTopListPageState extends State<ShrinkTopListPage>
                           decoration: BoxDecoration(
                             color: list.backgroundColor,
                             borderRadius: BorderRadius.only(topLeft: Radius.circular(25), topRight: Radius.circular(25.0)),
-                            boxShadow: [ BoxShadow( color: Colors.grey[400], blurRadius: 30, spreadRadius: -5 )]
+                            boxShadow: [ BoxShadow( color: Colors.grey[400]!, blurRadius: 30, spreadRadius: -5 )]
                           ),
                           child: Row(
                             children: [
@@ -153,7 +153,7 @@ class _ShrinkTopListPageState extends State<ShrinkTopListPage>
                                   children: [
                                     Image.asset(list.logo, height: 25),
                                     TextFrave(text: list.name ),
-                                    TextFrave(text: list.number, size: 30, fontWeight: FontWeight.w600 )
+                                    TextFrave(text: list.number, fontSize: 30, fontWeight: FontWeight.w600 )
                                   ],
                                 ),
                               ),
@@ -187,8 +187,8 @@ class MyCustomHeader extends SliverPersistentHeaderDelegate {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            TextFrave(text: 'Frave Cards', size: 23, color: Colors.grey ),
-            TextFrave(text: 'Coupons', size: 23, color: Colors.black ),
+            TextFrave(text: 'Frave Cards', fontSize: 23, color: Colors.grey ),
+            TextFrave(text: 'Coupons', fontSize: 23, color: Colors.black ),
           ],
         ),
       );
@@ -216,7 +216,7 @@ class MyCustomPinner extends SliverPersistentHeaderDelegate {
         alignment: Alignment.centerLeft,
         height: 40.0,
         color: Colors.white,
-        child: TextFrave(text: 'My Coupons', size: 23, color: Colors.black, fontWeight: FontWeight.w300 ),
+        child: TextFrave(text: 'My Coupons', fontSize: 23, color: Colors.black, fontWeight: FontWeight.w300 ),
       );
     }
   

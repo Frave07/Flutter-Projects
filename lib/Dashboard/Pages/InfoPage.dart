@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/Dashboard/Models/ProjectModel.dart';
-import 'package:flutter_projects/Dashboard/Pages/DetailsPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../Widgets/BottomNavigatorBarCustom.dart';
@@ -31,8 +30,7 @@ class InfoPage extends StatelessWidget
             itemBuilder: (context, i) => ListTile(
               title: Text(ProjectModel.listProjects[i].title, style: GoogleFonts.getFont('Inter', color: Color(0xff323A82))),
               trailing: Icon(Icons.arrow_forward_ios_outlined, size: 22, color: Color(0xff323A82)),
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) 
-                  => DetailsPage( package: ProjectModel.listProjects[i].package, permission: ProjectModel.listProjects[i].permission,))),
+              onTap: () {}
             ),
           ),
 

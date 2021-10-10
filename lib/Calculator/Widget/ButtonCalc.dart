@@ -4,13 +4,17 @@ import 'package:flutter_projects/Calculator/Bloc/Calculator/calculator_bloc.dart
 import 'package:google_fonts/google_fonts.dart';
 
 
-class ButtonCalc extends StatelessWidget
-{
+class ButtonCalc extends StatelessWidget {
+
   final String text;
   final Color textColor;
   final Function onPressed;
 
-  const ButtonCalc({this.text, this.textColor, this.onPressed });
+  const ButtonCalc({
+    required this.text, 
+    this.textColor = Colors.black, 
+    required this.onPressed 
+  });
 
 
  @override
@@ -31,7 +35,7 @@ class ButtonCalc extends StatelessWidget
       child: TextButton(
         style: buttonStyle,
         child: Center(child: Text(text, style: GoogleFonts.getFont('Inter', fontSize: 27, fontWeight: FontWeight.w500, color: textColor))),
-        onPressed: () => this.onPressed(),
+        onPressed: () => onPressed(),
       )
     );
 

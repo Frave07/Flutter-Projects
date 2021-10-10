@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-class ShrinkTopListModel
-{
+class ShrinkTopListModel {
 
   final String logo;
   final String name;
@@ -10,7 +9,13 @@ class ShrinkTopListModel
   final Color backgroundColor;
   final String image;
 
-  ShrinkTopListModel({this.logo, this.name, this.number, this.backgroundColor, this.image});
+  ShrinkTopListModel({
+    required this.logo, 
+    required this.name, 
+    required this.number, 
+    required this.backgroundColor, 
+    required this.image
+  });
 
 
   static final listCardShrinkTop = [
@@ -76,15 +81,19 @@ class ShrinkTopListModel
 }
 
 
-class DiscoverModels
-{
+class DiscoverModels {
 
   final String text;
   final String coupons;
   final Color color;
   final IconData icon;
 
-  DiscoverModels({this.text, this.coupons, this.color, this.icon});
+  DiscoverModels({
+    required this.text, 
+    required this.coupons, 
+    required this.color, 
+    required this.icon
+  });
 
   static final listDiscover = [
 

@@ -6,14 +6,12 @@ import 'package:google_fonts/google_fonts.dart';
 const duration = Duration(milliseconds: 300);
 const _initialPage = 8.0;
 
-class CoffeeListPage extends StatefulWidget
-{
+class CoffeeListPage extends StatefulWidget {
   @override
   _CoffeeListPageState createState() => _CoffeeListPageState();
 }
 
-class _CoffeeListPageState extends State<CoffeeListPage> 
-{
+class _CoffeeListPageState extends State<CoffeeListPage>  {
 
   final _pageController = PageController( viewportFraction: 0.35, initialPage: _initialPage.toInt() );
   final _pageTextController = PageController(initialPage: _initialPage.toInt() );
@@ -23,13 +21,13 @@ class _CoffeeListPageState extends State<CoffeeListPage>
 
   void _coffeeScrollListener(){
     setState(() {
-      _currentPage = _pageController.page;
+      _currentPage = _pageController.page!;
     });
   }
 
   void _textScrollListener(){
     setState(() {
-      _textPage = _pageTextController.page;
+      _textPage = _pageTextController.page!;
     });
   }
 

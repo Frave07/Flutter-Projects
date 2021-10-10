@@ -1,15 +1,15 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:local_auth/local_auth.dart';
+
 import 'package:flutter/services.dart';
 import 'package:flutter_projects/Dashboard/Helpers/Modal.dart';
 import 'package:flutter_projects/Password_Manager/AuthenticationPin.dart';
 import 'package:flutter_projects/Password_Manager/PasswordHome.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:local_auth/local_auth.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 class AuthenticationPage extends StatefulWidget
 {
@@ -18,9 +18,9 @@ class AuthenticationPage extends StatefulWidget
 }
 
 
-class _AuthenticationPageState extends State<AuthenticationPage> 
-{
-  bool canCheckBiometrics;
+class _AuthenticationPageState extends State<AuthenticationPage>  {
+
+  late bool canCheckBiometrics;
   bool authenticated = false;
 
   @override
@@ -32,10 +32,11 @@ class _AuthenticationPageState extends State<AuthenticationPage>
   }
 
   void main() async{
+
     WidgetsFlutterBinding.ensureInitialized();
     await Hive.initFlutter();
 
-    final FlutterSecureStorage secureStorage = const FlutterSecureStorage();
+    final FlutterSecureStorage secureStorage = FlutterSecureStorage();
 
     var containsEncryptionKey = await secureStorage.containsKey(key: 'key');
 
@@ -44,7 +45,9 @@ class _AuthenticationPageState extends State<AuthenticationPage>
       await secureStorage.write(key: 'key', value: base64UrlEncode(key));
     }
 
-    var encryptionKey = base64Url.decode( await secureStorage.read(key: 'key') );
+    final key = await secureStorage.read(key: 'key');
+
+    var encryptionKey = base64Url.decode( key! );
 
      print('Encryption key: $encryptionKey');
 
@@ -88,7 +91,7 @@ class _AuthenticationPageState extends State<AuthenticationPage>
         setState(() { });
       }
     } catch (e) {
-      if(e.code == "NotAvailable") { modalAlert(context); }
+      if(e.toString() == "NotAvailable") { modalAlert(context); }
     }
 
   }
