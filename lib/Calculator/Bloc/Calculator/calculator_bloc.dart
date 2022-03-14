@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:meta/meta.dart';
 import 'package:bloc/bloc.dart';
 
 import 'package:flutter/material.dart';
@@ -11,100 +10,109 @@ part 'calculator_state.dart';
 
 class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
 
-  CalculatorBloc() : super(CalculatorState( theme: CalculatorTheme.lightTheme ));
+  CalculatorBloc() : super(CalculatorState( theme: CalculatorTheme.lightTheme ))  {
 
-  @override
-  Stream<CalculatorState> mapEventToState( CalculatorEvent event ) async* {
-    
+    on<ClearAC>(_clearAC);
+    on<Clear>(_clearLast);
+    on<AddNumber>(_addNumber);
+    on<ChangeTheme>(_changeTheme);
+    on<OperationEntry>(_operationEntry);
+    on<PositiveNegative>(_positiveNegative);
+    on<MathResult>(_mathResult);
 
-      if( event is ClearAC ){
-        yield state.copyWith(firstNumber: '0', secondNumber: '0', resultNumber: '0');
-      
-      } else if( event is Clear ){
+  }
 
-        yield* _clearLast();
+  
+  Future<void> _clearAC(ClearAC event, Emitter<CalculatorState> emit) async {
 
-      }else if ( event is AddNumber ){
-        
-        yield state.copyWith( resultNumber: ( state.resultNumber == '0' ) 
+    emit(state.copyWith(firstNumber: '0', secondNumber: '0', resultNumber: '0'));
+
+  }
+
+  Future<void> _clearLast(Clear event, Emitter<CalculatorState> emit) async {
+
+     emit(state.copyWith(
+      resultNumber: ( state.resultNumber.length > 1 ) 
+                  ? state.resultNumber.substring(0, state.resultNumber.length - 1) 
+                  : '0'
+    ));
+
+  }
+
+  Future<void> _addNumber(AddNumber event, Emitter<CalculatorState> emit) async {
+
+    emit(state.copyWith( resultNumber: ( state.resultNumber == '0' ) 
                         ? event.number
                         : state.resultNumber + event.number
-        );
+        ));
 
-      }else if( event is ChangeTheme ){
-        yield state.copyWith(theme: event.theme );
+  }
 
-      }else if( event is OperationEntry ){
+  Future<void> _changeTheme(ChangeTheme event, Emitter<CalculatorState> emit) async {
 
-        yield* _operation(event.operation);
+    emit(state.copyWith(theme: event.theme ));
 
-      }else if( event is PositiveNegative ){
+  }
 
-        yield state.copyWith(
+  Future<void> _operationEntry(OperationEntry event, Emitter<CalculatorState> emit) async {
+
+    emit(state.copyWith(
+      firstNumber: state.resultNumber,
+      operation: event.operation,
+      resultNumber: '0',
+      secondNumber: '0'
+    ));
+
+  }
+
+  Future<void> _positiveNegative(PositiveNegative event, Emitter<CalculatorState> emit) async {
+
+    emit(state.copyWith(
           resultNumber: ( 
                 state.resultNumber.contains('-') 
                 ? state.resultNumber.replaceFirst('-', '')
                 : '-' + state.resultNumber  
           )
-        );
+        ));
 
-      }else if( event is MathResult ){
-
-        yield* _mathResult();
-      }
   }
 
-  Stream<CalculatorState> _clearLast() async*{
-    yield state.copyWith(
-      resultNumber: ( state.resultNumber.length > 1 ) 
-                  ? state.resultNumber.substring(0, state.resultNumber.length - 1) 
-                  : '0'
-    );
-  }
+  Future<void> _mathResult(MathResult event, Emitter<CalculatorState> emit) async {
 
-  Stream<CalculatorState> _operation(operation) async* {
-    yield state.copyWith(
-      firstNumber: state.resultNumber,
-      operation: operation,
-      resultNumber: '0',
-      secondNumber: '0'
-    );
-  }
-
-  Stream<CalculatorState> _mathResult() async* {
-    
     double num1 = double.parse( state.firstNumber );
     double num2 = double.parse( state.resultNumber );
 
     switch(state.operation){
       case '+':
-          yield state.copyWith(
+          emit(state.copyWith(
             secondNumber: state.resultNumber + ' =',
             resultNumber: ('${ num1 + num2 }')
-          );
+          ));
           break;
       case '-':
-          yield state.copyWith(
+          emit(state.copyWith(
             secondNumber: state.resultNumber + ' =',
             resultNumber: '${ num1 - num2 }'
-          );
+          ));
           break;
       case 'x':
-          yield state.copyWith(
+          emit(state.copyWith(
             secondNumber: state.resultNumber + ' =',
             resultNumber: '${ num1 * num2 }'
-          );
+          ));
           break;
       case '/':
-          yield state.copyWith(
+          emit(state.copyWith(
             secondNumber: state.resultNumber + ' =',
             resultNumber: '${ num1 ~/ num2 }'
-          );
+          ));
           break;
 
       default:
-          yield state;
+          emit(state);
 
     }
+
   }
+
 }

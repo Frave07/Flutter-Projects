@@ -24,7 +24,6 @@ class MyApp extends StatelessWidget {
         routes: routes,
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
-          primaryColorBrightness: Brightness.light,
           visualDensity: VisualDensity.adaptivePlatformDensity
         ),
       ),
