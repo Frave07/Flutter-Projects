@@ -5,6 +5,8 @@ import 'package:flutter_projects/Cinema/home_cine_page.dart';
 import 'package:flutter_projects/Coffee-App/HomeCoffeePage.dart';
 import 'package:flutter_projects/Dashboard/Pages/MainPage.dart';
 import 'package:flutter_projects/Password_Manager/Authentication.dart';
+import 'package:flutter_projects/scrollable/screens/home_food_screen.dart';
+import 'package:flutter_projects/scrollable_test/scrollable_home_screen.dart';
 
 Map< String, Widget Function(BuildContext)> routes = {
 
@@ -14,4 +16,6 @@ Map< String, Widget Function(BuildContext)> routes = {
     'calculator'     : (_) => AppStateCalculator(),
     'listAnimated'   : (_) => ShrinkTopListPage(),
     'cinema'         : (_) => HomeCinePage(),
+    'scrollable'     : (_) => ScrollableTabScreen(),
+    'food_scroll'    : (_) => InitialHomeFood(),
 };

@@ -63,6 +63,25 @@ class ProjectModel {
     color: Color(0xff1C2834)
   );
 
+  static const scrollable = ProjectModel(
+    id: 6,
+    title: 'Scrollable',
+    designer: 'Frave Developer',
+    pathImage: 'Assets/logo-white.png',
+    route: 'scrollable',
+    color: Color.fromARGB(255, 21, 116, 240)
+  );
+
+
+  static const foodScroll = ProjectModel(
+    id: 7,
+    title: 'Food Scroll [Beta]',
+    designer: 'Frave Developer',
+    pathImage: 'Assets/logo-white.png',
+    route: 'food_scroll',
+    color: Color.fromARGB(255, 240, 21, 50)
+  );
+
 
 
   static const listProjects = [
@@ -70,7 +89,9 @@ class ProjectModel {
     coffee,
     calculator,
     listAnimated,
-    cinema
+    cinema,
+    scrollable,
+    foodScroll,
   ];
 
   

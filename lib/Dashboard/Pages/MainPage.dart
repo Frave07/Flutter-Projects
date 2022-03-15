@@ -16,7 +16,7 @@ class MainPage extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0.3,
         centerTitle: true,
-        title: TextFrave(text: 'FRAVE PROJECTS', color: Color(0xff002C8B), fontWeight: FontWeight.w500, fontSize: 21)
+        title: TextFrave(text: 'FRAVED PROJECTS', color: Color(0xff002C8B), fontWeight: FontWeight.w500, fontSize: 21)
       ),
       body: Stack(
         children: [
