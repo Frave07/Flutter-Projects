@@ -1,17 +1,16 @@
-# Flutter - Projects | Frave Developer
+# Flutter - Projects | Fraved
 
 ### Yotube Channel
 [Frave Developer](https://www.youtube.com/channel/UCkNYlmbx487MPmYvfSMAdRg)
 
 ### Social Media
 
-<a href="https://www.facebook.com/fraveDeveloper"><img src="https://github.com/aritraroy/social-icons/blob/master/facebook-icon.png?raw=true" width="50"></a>
 <a href="https://www.instagram.com/frave_developer"><img src="https://github.com/aritraroy/social-icons/blob/master/instagram-icon.png?raw=true" width="50"></a>
 
 ### Donate
 
-<a href="https://www.buymeacoffee.com/frave"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="150"></a>
-<a href="https://www.paypal.me/Fpereza"><img src="https://image.flaticon.com/icons/png/512/888/888871.png" width="100"></a>
+<a href="https://www.buymeacoffee.com/frave"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="200"></a>
+<a href="https://www.paypal.me/Fpereza"><img src="https://cdn.svgporn.com/logos/paypal.svg" width="50"></a>
 
 ---
 ## APPs
@@ -48,7 +47,7 @@
     </tr>
 </table>
 
-### [Inspiration] (https://dribbble.com/shots/14166097-Coffee-App)
+### [Inspiration Dribbble](https://dribbble.com/shots/14166097-Coffee-App)
 
 
 ## 03 - Calculator App 
@@ -67,7 +66,7 @@
     </tr>
 </table>
 
-#### [Inspiration] (https://dribbble.com/shots/14709020-Calculator/attachments/6408579?mode=media)
+#### [Inspiration Dribbble](https://dribbble.com/shots/14709020-Calculator/attachments/6408579?mode=media)
 
 
 ## 04 - List Animation 
@@ -81,7 +80,7 @@
     </tr>
 </table>
 
-### [Inspiration] (https://dribbble.com/shots/14857079-MVPs-Prototypes)
+### [Inspiration Dribbble](https://dribbble.com/shots/14857079-MVPs-Prototypes)
 
 
 ## 05 - CINEMA 
@@ -95,4 +94,6 @@
     </tr>
 </table>
 
-### [Inspiration] (https://dribbble.com/shots/9527363-Movie-App/attachments/1554049?mode=media)
+### [Inspiration Dribbble](https://dribbble.com/shots/9527363-Movie-App/attachments/1554049?mode=media)
+
+## 06 - SCROLL FOOD 
